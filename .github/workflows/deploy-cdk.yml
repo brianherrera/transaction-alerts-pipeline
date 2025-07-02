@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install latest CDK CLI
+        run: npm install -g aws-cdk@latest
+
       - name: Build
         run: npm run build
 

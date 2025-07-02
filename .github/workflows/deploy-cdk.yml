@@ -30,11 +30,14 @@ jobs:
       - name: Install latest CDK CLI
         run: npm install -g aws-cdk@latest
 
+      - name: Verify CDK version
+        run: cdk --version
+
       - name: Build
         run: npm run build
 
       - name: Deploy CDK stack
-        run: npx cdk deploy --require-approval never
+        run: cdk deploy --require-approval never
         env:
           CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT_ID }}
           CDK_DEFAULT_REGION: ${{ secrets.AWS_REGION }}

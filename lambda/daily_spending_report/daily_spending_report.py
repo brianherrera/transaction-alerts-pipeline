@@ -103,7 +103,7 @@ def handler(event, context):
         
         sns_client.publish(
             TopicArn=spending_report_topic_arn,
-            Subject=f"Daily Spending Report: ${total_spent:.2f}",
+            Subject=f"MTD ${int(monthly_total)} | D ${int(total_spent)} – Daily Spending Report",
             Message=message
         )
         

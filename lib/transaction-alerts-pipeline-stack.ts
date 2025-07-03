@@ -27,11 +27,11 @@ export class TransactionAlertsPipelineStack extends cdk.Stack {
     );
 
     this.highValueTransactionTopic = new sns.Topic(this, 'HighValueTransactionTopic', {
-      displayName: 'High Value Transaction Alerts',
+      displayName: 'High Value Transaction Alert',
     });
 
     this.spendingReportTopic = new sns.Topic(this, 'SpendingReportTopic', {
-      displayName: 'Daily Spending Reports',
+      displayName: 'Daily Spending Report',
     });
 
     const pipeline = new EmailProcessingPipeline(this, 'EmailProcessingPipeline', {

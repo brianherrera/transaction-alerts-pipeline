@@ -85,7 +85,7 @@ def handler(event, context):
     # Generate the report
     if transactions:
         # Create the message with one transaction per line
-        lines = [f"Daily Spending Report for {yesterday_str}"]
+        lines = [f"Daily Spending Report for {yesterday.strftime('%b %d, %Y')}"]
         lines.append("")
         lines.append("Transactions:")
         
